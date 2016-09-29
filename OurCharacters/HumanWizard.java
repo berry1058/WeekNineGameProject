@@ -9,9 +9,7 @@ public class HumanWizard extends Human implements Wizard {
 	
 	private Weapon wizardWeapon = null;
 	
-	
-	
-	
+		
 
 	public HumanWizard() {
 		super();
@@ -31,16 +29,31 @@ public class HumanWizard extends Human implements Wizard {
 	@Override
 	public void changeHealth() {
 		// TODO Auto-generated method stub
-
+		super.setHealth(health = health + 0);
 	}
 
 	@Override
 	public void changeMagic() {
 		// TODO Auto-generated method stub
-
+		super.setMagic(magic = magic + 200);
 	}
 
-	
+	@Override
+	public void setWeapons(Weapon weapon) {
+		// TODO Auto-generated method stub
+		super.setWeapons(Weapon.WAND);
+	}
+
+	public HumanWizard makeHumanWizard(){
+		HumanWizard ourHumanWizard = new HumanWizard();
+		
+		ourHumanWizard.changeHealth();
+		ourHumanWizard.changeMagic();
+		ourHumanWizard.setName(name);
+		ourHumanWizard.setWeapons(weapon);
+		
+		return ourHumanWizard;
+	}
 
 	
 }
